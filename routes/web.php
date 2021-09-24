@@ -5,9 +5,7 @@ use RotEval\TextRandomizer\TextRandomozer;
 
 use Illuminate\Http\Request;
 
-$router->get('/', function (Request $request) use ($router) {
-
-//    return response()->json([$request->input('text')]);
+$router->post('/', function (Request $request) use ($router) {
 
 	$tRand = new RotEval\TextRandomizer\TextRandomizer($request->input('text'));
     $cnt = $tRand->numVariant();
