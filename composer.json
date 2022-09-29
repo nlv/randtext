@@ -1,8 +1,8 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
-    "license": "MIT",
+    "name": "nlvomsk/randtext-2.0",
+    "description": "API for generating randomizet text. Based on roteval/text-randomizer library.",
+    "keywords": ["text", "api", "randomizer"],
+    "license": "GNU 2.0",
     "type": "project",
     "require": {
         "php": ">=7.1.3",
