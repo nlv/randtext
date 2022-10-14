@@ -11,15 +11,12 @@ $str = preg_replace("/(\n|\r)/", "", $str);
 return preg_replace("/i", "\r\n", $str);
 }
 
-$router->get('/', function (Request $request) use ($router) {
+$router->post('/', function (Request $request) use ($router) {
 
 
-// return response()->json($request->input('text'))->setEncodingOptions(JSON_UNESCAPED_UNICODE | JSON_HEX_AMP);
 
 $a = json_encode($request->input('text'),JSON_UNESCAPED_UNICODE | JSON_HEX_AMP);
 //$a = str_replace("\n","\r",$a);
-//print_r($a);
-//die();
 
 	//$tRand = new RotEval\TextRandomizer\TextRandomizer($request->input('text'));
 	$tRand = new RotEval\TextRandomizer\TextRandomizer($a);
@@ -35,8 +32,6 @@ $a = json_encode($request->input('text'),JSON_UNESCAPED_UNICODE | JSON_HEX_AMP);
     $res = [];
 	for ($i=0; $i<$cnt; ++$i) {
 		$res[] = json_decode($tRand->getText(),JSON_UNESCAPED_UNICODE | JSON_HEX_AMP);
-//print_r($res);
-//die();
 	}
 
   // TODO проверять не наличие строки application/json, а разрешение, согласно протоколу 
